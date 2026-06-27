@@ -14,69 +14,12 @@ import Footer from './Footer';
 
 function App() {
   const [currentPage, setCurrentPage] = useState('home');
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const goToSearch = (e) => {
+  const handleNavigate = (pageId, e) => {
     if(e) e.preventDefault();
-    setCurrentPage('search');
-    window.scrollTo(0, 0);
-  };
-
-  const goToHome = (e) => {
-    if(e) e.preventDefault();
-    setCurrentPage('home');
-    window.scrollTo(0, 0);
-  };
-
-  const goToDetails = (e) => {
-    if(e) e.preventDefault();
-    setCurrentPage('details');
-    window.scrollTo(0, 0);
-  };
-
-  const goToShowcase = (e) => {
-    if(e) e.preventDefault();
-    setCurrentPage('showcase');
-    window.scrollTo(0, 0);
-  };
-
-  const goToBuilders = (e) => {
-    if(e) e.preventDefault();
-    setCurrentPage('builders');
-    window.scrollTo(0, 0);
-  };
-
-  const goToInsights = (e) => {
-    if(e) e.preventDefault();
-    setCurrentPage('insights');
-    window.scrollTo(0, 0);
-  };
-
-  const goToPost = (e) => {
-    if(e) e.preventDefault();
-    setCurrentPage('post');
-    window.scrollTo(0, 0);
-  };
-
-  const goToInteriors = (e) => {
-    if(e) e.preventDefault();
-    setCurrentPage('interiors');
-    window.scrollTo(0, 0);
-  };
-
-  const goToDashboard = (e) => {
-    if(e) e.preventDefault();
-    setCurrentPage('dashboard');
-    window.scrollTo(0, 0);
-  };
-
-  const goToContact = (e) => {
-    if(e) e.preventDefault();
-    setCurrentPage('contact');
-    window.scrollTo(0, 0);
-  };
-
-  const handleNavigate = (pageId) => {
     setCurrentPage(pageId);
+    setIsMobileMenuOpen(false); // Close menu on navigation
     window.scrollTo(0, 0);
   };
 
@@ -88,30 +31,59 @@ function App() {
       {!isDistractionFree && (
         <header className="header">
           <div className="container header-container">
-            <div className="logo" onClick={goToHome} style={{ cursor: 'pointer' }}>
+            <div className="logo" onClick={(e) => handleNavigate('home', e)} style={{ cursor: 'pointer' }}>
               TerraHomes<span style={{ color: 'var(--text-dark)' }}>.</span>
             </div>
             
-            <nav className="nav-links">
-              <a href="#" className="nav-link" onClick={goToSearch}>Buy</a>
-              <a href="#" className="nav-link" onClick={goToSearch}>Rent</a>
-              <a href="#" className="nav-link" onClick={goToInteriors}>Interiors</a>
-              <a href="#" className="nav-link" onClick={goToShowcase}>New Projects</a>
-              <a href="#" className="nav-link" onClick={goToBuilders}>Top Builders</a>
-              <a href="#" className="nav-link" onClick={goToInsights}>Insights</a>
-              <a href="#" className="nav-link" onClick={goToContact}>Contact</a>
+            {/* Desktop Navigation */}
+            <nav className="nav-links desktop-only">
+              <a href="#" className="nav-link" onClick={(e) => handleNavigate('search', e)}>Buy</a>
+              <a href="#" className="nav-link" onClick={(e) => handleNavigate('search', e)}>Rent</a>
+              <a href="#" className="nav-link" onClick={(e) => handleNavigate('interiors', e)}>Interiors</a>
+              <a href="#" className="nav-link" onClick={(e) => handleNavigate('showcase', e)}>New Projects</a>
+              <a href="#" className="nav-link" onClick={(e) => handleNavigate('builders', e)}>Top Builders</a>
+              <a href="#" className="nav-link" onClick={(e) => handleNavigate('insights', e)}>Insights</a>
+              <a href="#" className="nav-link" onClick={(e) => handleNavigate('contact', e)}>Contact</a>
             </nav>
             
-            <div className="header-right">
-              <a href="#" className="login-link" onClick={goToDashboard}>Agent Dashboard</a>
-              <button className="btn btn-primary" onClick={goToPost}>Post Property - Free</button>
+            <div className="header-right desktop-only">
+              <a href="#" className="login-link" onClick={(e) => handleNavigate('dashboard', e)}>Agent Dashboard</a>
+              <button className="btn btn-primary" onClick={(e) => handleNavigate('post', e)}>Post Property - Free</button>
+            </div>
+
+            {/* Hamburger Button (Mobile Only) */}
+            <button 
+              className={`hamburger-btn mobile-only ${isMobileMenuOpen ? 'open' : ''}`}
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              <span></span>
+              <span></span>
+              <span></span>
+            </button>
+          </div>
+
+          {/* Mobile Overlay Menu */}
+          <div className={`mobile-menu-overlay ${isMobileMenuOpen ? 'active' : ''}`}>
+            <nav className="mobile-nav-links">
+              <a href="#" className="mobile-nav-link" onClick={(e) => handleNavigate('search', e)}>Buy</a>
+              <a href="#" className="mobile-nav-link" onClick={(e) => handleNavigate('search', e)}>Rent</a>
+              <a href="#" className="mobile-nav-link" onClick={(e) => handleNavigate('interiors', e)}>Interiors</a>
+              <a href="#" className="mobile-nav-link" onClick={(e) => handleNavigate('showcase', e)}>New Projects</a>
+              <a href="#" className="mobile-nav-link" onClick={(e) => handleNavigate('builders', e)}>Top Builders</a>
+              <a href="#" className="mobile-nav-link" onClick={(e) => handleNavigate('insights', e)}>Insights</a>
+              <a href="#" className="mobile-nav-link" onClick={(e) => handleNavigate('contact', e)}>Contact</a>
+            </nav>
+            <div className="mobile-nav-actions">
+              <a href="#" className="mobile-login-link" onClick={(e) => handleNavigate('dashboard', e)}>Agent Dashboard</a>
+              <button className="btn btn-primary mobile-post-btn" onClick={(e) => handleNavigate('post', e)}>Post Property - Free</button>
             </div>
           </div>
         </header>
       )}
 
       {/* Conditionally Render Pages */}
-      {currentPage === 'home' && <Home onSearch={goToSearch} />}
+      {currentPage === 'home' && <Home onSearch={(e) => handleNavigate('search', e)} />}
       {currentPage === 'search' && <SearchResults onPropertyClick={goToDetails} />}
       {currentPage === 'details' && <PropertyDetails />}
       {currentPage === 'showcase' && <Showcase />}

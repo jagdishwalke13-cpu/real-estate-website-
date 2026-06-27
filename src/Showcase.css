@@ -389,3 +389,34 @@
 .btn-vip:hover {
   background: #000;
 }
+
+/* Mobile Responsiveness for Showcase */
+@media (max-width: 1024px) {
+  .showcase-hero-content h1 {
+    font-size: 56px;
+  }
+}
+
+@media (max-width: 768px) {
+  .showcase-hero-content h1 {
+    font-size: 36px;
+  }
+  .showcase-hero-content p {
+    font-size: 16px;
+  }
+  .masonry-grid {
+    column-count: 1;
+  }
+  .vip-card {
+    flex-direction: column;
+    padding: 32px 24px;
+    text-align: center;
+  }
+  .vip-card-content h2 {
+    font-size: 28px;
+  }
+  .btn-vip {
+    width: 100%;
+    padding: 14px;
+  }
+}

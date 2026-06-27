@@ -359,3 +359,51 @@
 .btn-submit:hover {
   background-color: #000;
 }
+
+/* Mobile Responsiveness for Property Details */
+@media (max-width: 1024px) {
+  .details-layout {
+    flex-direction: column;
+  }
+  .main-details {
+    width: 100%;
+  }
+  .contact-sidebar {
+    width: 100%;
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-gallery {
+    grid-template-columns: 1fr;
+    grid-template-rows: 300px auto auto;
+  }
+  .main-image {
+    grid-column: 1;
+    grid-row: 1;
+  }
+  .sub-images {
+    display: none;
+  }
+  .header-content {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .header-actions {
+    width: 100%;
+    justify-content: flex-start;
+  }
+  .core-metrics {
+    flex-direction: column;
+    gap: 16px;
+  }
+  .metric-item {
+    width: 100%;
+    padding: 12px;
+  }
+  .amenities-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
