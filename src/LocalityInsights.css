@@ -1,0 +1,338 @@
+/* Locality Insights Page Styles */
+.insights-page {
+  background-color: var(--bg-white);
+  min-height: 100vh;
+  padding-bottom: 100px;
+}
+
+/* Locality Header */
+.insights-header-section {
+  padding: 60px 0 40px 0;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.insights-header-top {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  margin-bottom: 24px;
+}
+
+.locality-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+.livability-gauge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  border: 6px solid #10B981; /* Emerald Green */
+  background: #ECFDF5;
+  color: #047857;
+  font-size: 20px;
+  font-weight: 700;
+  box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
+}
+
+.livability-gauge span {
+  font-size: 12px;
+  font-weight: 500;
+  margin-left: 2px;
+}
+
+.highlight-tags {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.highlight-tag {
+  background: var(--bg-gray);
+  border: 1px solid var(--border-color);
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  font-size: 14px;
+  font-weight: 500;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.highlight-tag svg {
+  color: var(--primary);
+}
+
+/* Interactive Map & Radar */
+.map-radar-section {
+  padding: 80px 0;
+  background-color: var(--bg-white);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.map-radar-layout {
+  display: flex;
+  gap: 40px;
+  align-items: stretch;
+}
+
+.map-container-custom {
+  flex: 1;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  position: relative;
+  border: 1px solid var(--border-color);
+  box-shadow: var(--shadow-sm);
+  height: 500px;
+}
+
+.map-container-custom iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.map-toggles {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  display: flex;
+  gap: 12px;
+  background: rgba(255,255,255,0.9);
+  padding: 8px;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(4px);
+}
+
+.map-toggle-btn {
+  padding: 8px 16px;
+  border-radius: var(--radius-full);
+  font-size: 13px;
+  font-weight: 600;
+  background: white;
+  border: 1px solid var(--border-color);
+  color: var(--text-gray);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.map-toggle-btn:hover {
+  border-color: var(--text-dark);
+  color: var(--text-dark);
+}
+
+.map-toggle-btn.active {
+  background: var(--text-dark);
+  color: white;
+  border-color: var(--text-dark);
+}
+
+.radar-container {
+  flex: 1;
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-lg);
+  padding: 40px;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.radar-title {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 24px;
+  text-align: center;
+}
+
+/* Price Trends Section */
+.price-trends-section {
+  padding: 80px 0;
+  background-color: var(--bg-white);
+  border-bottom: 1px solid var(--border-color);
+}
+
+.price-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin-bottom: 40px;
+}
+
+.price-title-group h2 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+}
+
+.price-stat-row {
+  display: flex;
+  align-items: baseline;
+  gap: 16px;
+}
+
+.current-price {
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--text-dark);
+  letter-spacing: -1px;
+}
+
+.yoy-growth {
+  background: #ECFDF5;
+  color: #10B981;
+  padding: 6px 12px;
+  border-radius: var(--radius-full);
+  font-size: 15px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.price-toggles {
+  display: flex;
+  background: var(--bg-gray);
+  padding: 4px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+}
+
+.price-toggle-btn {
+  padding: 10px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: 8px;
+  color: var(--text-gray);
+  transition: all 0.2s;
+}
+
+.price-toggle-btn.active {
+  background: white;
+  color: var(--text-dark);
+  box-shadow: var(--shadow-sm);
+}
+
+.chart-wrapper {
+  width: 100%;
+  height: 400px;
+}
+
+/* Resident Reviews */
+.reviews-section {
+  padding: 80px 0;
+  background-color: var(--bg-gray);
+}
+
+.reviews-header {
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+.reviews-header h2 {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.reviews-carousel {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding: 20px 0 40px 0;
+  scroll-snap-type: x mandatory;
+}
+
+.reviews-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.review-card {
+  min-width: 350px;
+  background: white;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-md);
+  padding: 32px;
+  box-shadow: var(--shadow-md);
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.stars {
+  display: flex;
+  gap: 4px;
+  color: #F59E0B; /* Deep Gold */
+}
+
+.stars svg {
+  fill: currentColor;
+}
+
+.review-text {
+  font-size: 16px;
+  color: var(--text-dark);
+  line-height: 1.6;
+  font-style: italic;
+  flex-grow: 1;
+}
+
+.reviewer-info {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  border-top: 1px solid var(--border-color);
+  padding-top: 16px;
+}
+
+.reviewer-name {
+  font-size: 15px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.verified-tag {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: #10B981;
+}
+
+@media (max-width: 1024px) {
+  .map-radar-layout {
+    flex-direction: column;
+  }
+  .map-container-custom, .radar-container {
+    width: 100%;
+  }
+}
+
+@media (max-width: 768px) {
+  .insights-header-top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 16px;
+  }
+  .price-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 24px;
+  }
+  .map-toggles {
+    flex-wrap: wrap;
+  }
+}

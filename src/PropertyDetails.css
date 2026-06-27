@@ -1,0 +1,361 @@
+/* Property Details Page Styles */
+.property-details-page {
+  background-color: var(--bg-white);
+  min-height: 100vh;
+  padding-bottom: 60px;
+}
+
+/* Hero Media Gallery */
+.property-hero {
+  position: relative;
+  width: 100%;
+  height: 500px;
+  background-color: #f0f0f0;
+  margin-bottom: 40px;
+}
+
+.property-hero img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.hero-actions {
+  position: absolute;
+  bottom: 24px;
+  right: 40px;
+  display: flex;
+  gap: 16px;
+}
+
+.glass-btn {
+  background: rgba(255, 255, 255, 0.2);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  color: white;
+  padding: 12px 20px;
+  border-radius: var(--radius-sm);
+  font-weight: 600;
+  font-size: 14px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.glass-btn:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-2px);
+}
+
+/* Layout */
+.property-layout {
+  display: flex;
+  gap: 40px;
+  align-items: flex-start;
+}
+
+.property-main {
+  flex: 2; /* Approx 66% */
+}
+
+.property-sidebar-container {
+  flex: 1; /* Approx 33% */
+  position: sticky;
+  top: 100px; /* Below sticky header */
+}
+
+/* Main Content Styles */
+.prop-header {
+  margin-bottom: 32px;
+}
+
+.prop-title-row {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 8px;
+}
+
+.prop-title {
+  font-size: 32px;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.2;
+}
+
+.verified-badge-large {
+  background: #10B981;
+  color: white;
+  padding: 4px 12px;
+  border-radius: var(--radius-sm);
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.prop-location-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-gray);
+  font-size: 15px;
+}
+
+/* Price & Core Details */
+.prop-price-section {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  padding: 24px 0;
+  border-top: 1px solid var(--border-color);
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 40px;
+}
+
+.prop-price-box {
+  display: flex;
+  flex-direction: column;
+}
+
+.prop-price {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text-dark);
+  line-height: 1.1;
+}
+
+.prop-price-sqft {
+  font-size: 14px;
+  color: var(--text-gray);
+  margin-top: 4px;
+}
+
+.prop-core-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+  flex-grow: 1;
+}
+
+.core-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.core-item-top {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--text-gray);
+  font-size: 13px;
+}
+
+.core-item-value {
+  font-size: 16px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+/* Sections */
+.prop-section {
+  margin-bottom: 48px;
+}
+
+.prop-section-title {
+  font-size: 24px;
+  font-weight: 600;
+  color: var(--text-dark);
+  margin-bottom: 24px;
+}
+
+.prop-overview {
+  font-size: 16px;
+  color: var(--text-gray);
+  line-height: 1.6;
+}
+
+/* Amenities Grid */
+.amenities-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 24px;
+}
+
+.amenity-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 15px;
+  color: var(--text-dark);
+  font-weight: 500;
+}
+
+.amenity-icon {
+  width: 48px;
+  height: 48px;
+  background: var(--bg-gray);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--primary);
+}
+
+/* Floor Plan & Map */
+.floor-plan-img {
+  width: 100%;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-color);
+  margin-bottom: 24px;
+}
+
+.map-container {
+  width: 100%;
+  height: 400px;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  border: 1px solid var(--border-color);
+}
+
+.map-container iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Sticky Contact Sidebar */
+.contact-card {
+  background: white;
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-lg);
+  border: 1px solid var(--border-color);
+  padding: 32px;
+}
+
+.agent-profile {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  position: relative;
+}
+
+.agent-photo {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+.agent-details {
+  display: flex;
+  flex-direction: column;
+}
+
+.agent-name {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-dark);
+}
+
+.agent-company {
+  font-size: 14px;
+  color: var(--text-gray);
+  margin-top: 2px;
+}
+
+.top-rated-badge {
+  position: absolute;
+  top: 0;
+  right: 0;
+  background: #FFFBEB;
+  color: #D97706;
+  border: 1px solid #FDE68A;
+  padding: 4px 8px;
+  border-radius: var(--radius-sm);
+  font-size: 11px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.contact-actions {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.btn-contact {
+  background-color: #0F172A; /* Trustworthy dark blue */
+  color: white;
+  width: 100%;
+  padding: 16px;
+  font-size: 16px;
+}
+
+.btn-contact:hover {
+  background-color: #1E293B;
+  transform: translateY(-2px);
+}
+
+.btn-whatsapp-large {
+  width: 100%;
+  padding: 16px;
+  font-size: 16px;
+}
+
+/* Site Visit Form */
+.visit-form-title {
+  font-size: 18px;
+  font-weight: 600;
+  margin-bottom: 16px;
+  color: var(--text-dark);
+}
+
+.visit-form {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.form-input {
+  padding: 12px 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-family: inherit;
+  outline: none;
+  background: var(--bg-gray);
+  transition: border-color 0.2s;
+}
+
+.form-input:focus {
+  border-color: var(--text-dark);
+  background: white;
+}
+
+.btn-submit {
+  background-color: var(--text-dark);
+  color: white;
+  width: 100%;
+  padding: 14px;
+  margin-top: 8px;
+}
+
+.btn-submit:hover {
+  background-color: #000;
+}

@@ -1,0 +1,419 @@
+/* Contact & App Page Styles */
+.contact-page {
+  background-color: var(--bg-white);
+  min-height: 100vh;
+}
+
+/* App Download Hero Section */
+.app-hero {
+  padding: 100px 0;
+  border-bottom: 1px solid var(--border-color);
+  overflow: hidden;
+}
+
+.app-hero-layout {
+  display: flex;
+  align-items: center;
+  gap: 60px;
+}
+
+.app-hero-content {
+  flex: 1;
+}
+
+.app-title {
+  font-size: 56px;
+  font-weight: 800;
+  color: var(--text-dark);
+  line-height: 1.1;
+  margin-bottom: 24px;
+  letter-spacing: -1px;
+}
+
+.app-desc {
+  font-size: 20px;
+  color: var(--text-gray);
+  line-height: 1.6;
+  margin-bottom: 40px;
+  max-width: 500px;
+}
+
+.app-buttons {
+  display: flex;
+  gap: 16px;
+}
+
+.btn-store {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  background: var(--text-dark);
+  color: white;
+  padding: 14px 24px;
+  border-radius: 12px;
+  font-size: 16px;
+  font-weight: 600;
+  transition: all 0.3s;
+  cursor: pointer;
+  border: none;
+}
+
+.btn-store:hover {
+  background: #000;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+}
+
+.btn-store svg {
+  width: 24px;
+  height: 24px;
+}
+
+.btn-store-google {
+  background: white;
+  color: var(--text-dark);
+  border: 2px solid var(--border-color);
+}
+
+.btn-store-google:hover {
+  background: var(--bg-gray);
+  border-color: var(--text-dark);
+}
+
+/* Cinematic 3D Smartphone Mockup (CSS Only) */
+.app-hero-visual {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  perspective: 1000px;
+}
+
+.phone-mockup {
+  width: 300px;
+  height: 600px;
+  background: #111; /* Dark mode base */
+  border-radius: 40px;
+  border: 8px solid #E5E7EB; /* Silver bezel */
+  box-shadow: 
+    -20px 20px 40px rgba(0,0,0,0.15),
+    inset 0 0 0 2px #d1d5db;
+  transform: rotateY(-15deg) rotateX(10deg) rotateZ(5deg);
+  transition: transform 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.phone-mockup:hover {
+  transform: rotateY(-5deg) rotateX(5deg) rotateZ(2deg) scale(1.02);
+}
+
+.notch {
+  position: absolute;
+  top: 0; left: 50%;
+  transform: translateX(-50%);
+  width: 120px;
+  height: 25px;
+  background: #E5E7EB;
+  border-bottom-left-radius: 16px;
+  border-bottom-right-radius: 16px;
+  z-index: 10;
+}
+
+/* Internal App UI Mockup */
+.mockup-ui {
+  flex: 1;
+  background: #0F172A; /* Slate 900 for dark mode */
+  padding: 40px 16px 16px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.mockup-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+}
+
+.mockup-card {
+  background: #1E293B;
+  border-radius: 16px;
+  overflow: hidden;
+  height: 200px;
+  position: relative;
+}
+
+.mockup-card-img {
+  width: 100%;
+  height: 120px;
+  background: url('/assets/showcase_hero_1782577133073.png') center/cover;
+}
+
+.mockup-card-body {
+  padding: 12px;
+}
+
+.mockup-price {
+  color: white;
+  font-size: 18px;
+  font-weight: 700;
+}
+
+.mockup-loc {
+  color: #94A3B8;
+  font-size: 12px;
+}
+
+.mockup-btn {
+  background: #10B981;
+  color: white;
+  padding: 12px;
+  border-radius: 8px;
+  text-align: center;
+  font-weight: 600;
+  font-size: 14px;
+  margin-top: auto;
+}
+
+/* Support & Contact Hub */
+.support-section {
+  padding: 100px 0;
+}
+
+.support-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+}
+
+.support-card {
+  background: white;
+  border-radius: var(--radius-lg);
+  padding: 40px 32px;
+  text-align: center;
+  box-shadow: 0 10px 40px rgba(0,0,0,0.04);
+  border: 1px solid rgba(0,0,0,0.02);
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.support-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.08);
+}
+
+.support-icon {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.icon-whatsapp { background: #DCFCE7; color: #16A34A; }
+.icon-phone { background: #F1F5F9; color: #475569; }
+.icon-mail { background: #E0EAFF; color: #4F46E5; }
+
+.support-card h3 {
+  font-size: 22px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 12px;
+}
+
+.support-desc {
+  font-size: 15px;
+  color: var(--text-gray);
+  margin-bottom: 32px;
+  flex-grow: 1;
+}
+
+.support-action {
+  font-size: 16px;
+  font-weight: 600;
+  padding: 12px 24px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  transition: all 0.2s;
+  text-decoration: none;
+}
+
+.action-whatsapp {
+  border: 2px solid #16A34A;
+  color: #16A34A;
+  background: transparent;
+}
+.action-whatsapp:hover { background: #16A34A; color: white; }
+
+.action-phone {
+  color: #0F172A;
+  font-size: 20px;
+}
+.action-phone:hover { color: #475569; }
+
+.action-mail {
+  color: #4F46E5;
+  font-size: 16px;
+}
+.action-mail:hover { text-decoration: underline; }
+
+/* Contact Form Section */
+.form-map-section {
+  padding-bottom: 0; /* Map is edge to edge at bottom */
+}
+
+.contact-form-container {
+  max-width: 600px;
+  margin: 0 auto 80px auto;
+  text-align: center;
+}
+
+.contact-form-title {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 40px;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+}
+
+.floating-input-contact {
+  width: 100%;
+  padding: 24px 16px 12px 16px;
+  font-size: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: white;
+  outline: none;
+  font-family: inherit;
+  transition: border-color 0.3s;
+}
+
+.floating-input-contact:focus {
+  border-color: var(--text-dark);
+}
+
+.contact-select {
+  width: 100%;
+  padding: 18px 16px;
+  font-size: 16px;
+  border: 1px solid var(--border-color);
+  border-radius: var(--radius-sm);
+  background: white;
+  outline: none;
+  font-family: inherit;
+  color: var(--text-gray);
+  appearance: none;
+}
+
+.contact-select:focus {
+  border-color: var(--text-dark);
+  color: var(--text-dark);
+}
+
+.btn-submit {
+  background: var(--text-dark);
+  color: white;
+  padding: 20px;
+  font-size: 18px;
+  font-weight: 600;
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition: background 0.3s;
+  margin-top: 16px;
+}
+
+.btn-submit:hover {
+  background: #000;
+}
+
+/* Edge to Edge Map */
+.map-full-width {
+  width: 100%;
+  height: 450px;
+  position: relative;
+  border-top: 1px solid var(--border-color);
+  /* Use filter to make the google map lighter/silver theme */
+  filter: grayscale(100%) opacity(0.8) contrast(1.2);
+}
+
+.map-full-width iframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+/* Custom overlay pins (mocking branded pins) */
+.map-pin-overlay {
+  position: absolute;
+  background: white;
+  padding: 12px 16px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  font-weight: 700;
+  font-size: 14px;
+  color: var(--text-dark);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  border: 1px solid var(--border-color);
+  z-index: 10;
+}
+
+.map-pin-overlay::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  left: 50%;
+  margin-left: -8px;
+  border-width: 8px 8px 0;
+  border-style: solid;
+  border-color: white transparent transparent transparent;
+  filter: drop-shadow(0 2px 2px rgba(0,0,0,0.1));
+}
+
+.pin-mumbai { top: 40%; left: 30%; }
+.pin-nagpur { top: 60%; left: 60%; }
+
+@media (max-width: 1024px) {
+  .app-hero-layout {
+    flex-direction: column;
+    text-align: center;
+  }
+  .app-desc {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .app-buttons {
+    justify-content: center;
+  }
+  .support-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .app-title {
+    font-size: 40px;
+  }
+  .support-grid {
+    grid-template-columns: 1fr;
+  }
+  .btn-store {
+    padding: 14px 16px;
+    font-size: 14px;
+  }
+}

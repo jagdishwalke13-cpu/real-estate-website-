@@ -1,0 +1,365 @@
+/* Interiors Page Styles */
+.interiors-page {
+  background-color: var(--bg-white);
+  min-height: 100vh;
+  padding-bottom: 100px;
+}
+
+/* Interactive Hero Section (Before/After) */
+.interiors-hero {
+  padding: 80px 20px;
+  text-align: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.interiors-title {
+  font-size: 48px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+  letter-spacing: -1px;
+}
+
+.interiors-subtitle {
+  font-size: 20px;
+  color: var(--text-gray);
+  margin-bottom: 48px;
+}
+
+.before-after-container {
+  position: relative;
+  width: 100%;
+  max-width: 1000px;
+  height: 500px;
+  margin: 0 auto;
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  box-shadow: var(--shadow-lg);
+}
+
+.image-after, .image-before {
+  position: absolute;
+  top: 0; left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.image-before {
+  /* Using a raw/grayscale filter to mock an "unfurnished" look for the demo */
+  filter: grayscale(80%) sepia(20%);
+}
+
+.image-after-wrapper {
+  position: absolute;
+  top: 0; left: 0;
+  width: 50%; /* Initial slider position */
+  height: 100%;
+  overflow: hidden;
+  border-right: 4px solid white;
+}
+
+.slider-handle {
+  position: absolute;
+  top: 0; bottom: 0;
+  left: 50%;
+  width: 40px;
+  margin-left: -20px;
+  cursor: ew-resize;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 10;
+}
+
+.slider-button {
+  width: 40px;
+  height: 40px;
+  background: white;
+  border-radius: 50%;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.3);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-dark);
+}
+
+.ba-label {
+  position: absolute;
+  bottom: 24px;
+  background: rgba(0,0,0,0.6);
+  color: white;
+  padding: 6px 16px;
+  border-radius: var(--radius-full);
+  font-size: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  pointer-events: none;
+}
+
+.label-before { right: 24px; z-index: 5; }
+.label-after { left: 24px; z-index: 10; } /* Inside wrapper */
+
+/* Interior Design & Decor Showcase (Bento Grid) */
+.decor-section {
+  padding: 80px 0;
+  background: var(--bg-white);
+  border-top: 1px solid var(--border-color);
+}
+
+.section-header-center {
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+.section-header-center h2 {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.decor-bento-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 250px;
+  gap: 20px;
+  margin-bottom: 80px;
+}
+
+.bento-item {
+  position: relative;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.3s;
+}
+
+.bento-item:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+}
+
+.bento-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.bento-overlay {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  padding: 24px 20px;
+  color: white;
+}
+
+.bento-overlay h3 {
+  font-size: 20px;
+  font-weight: 600;
+  margin: 0;
+}
+
+/* Specific spans */
+.bento-1 { grid-column: span 2; grid-row: span 2; }
+.bento-2 { grid-column: span 2; grid-row: span 1; }
+.bento-3 { grid-column: span 1; grid-row: span 1; }
+.bento-4 { grid-column: span 1; grid-row: span 1; }
+
+/* 1-Minute Makeovers (9:16 Video Carousel) */
+.reels-section {
+  margin-top: 60px;
+}
+
+.reels-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 32px;
+}
+
+.reels-header h3 {
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-dark);
+}
+
+.reels-header svg {
+  color: #EF4444; /* Red play icon */
+}
+
+.reels-carousel {
+  display: flex;
+  gap: 24px;
+  overflow-x: auto;
+  padding-bottom: 24px;
+  scroll-snap-type: x mandatory;
+}
+
+.reels-carousel::-webkit-scrollbar {
+  display: none;
+}
+
+.reel-card {
+  min-width: 280px;
+  height: 500px;
+  border-radius: var(--radius-lg);
+  position: relative;
+  overflow: hidden;
+  box-shadow: var(--shadow-md);
+  scroll-snap-align: center;
+  cursor: pointer;
+}
+
+.reel-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s;
+}
+
+.reel-card:hover img {
+  transform: scale(1.05);
+}
+
+.play-overlay {
+  position: absolute;
+  top: 50%; left: 50%;
+  transform: translate(-50%, -50%);
+  width: 64px;
+  height: 64px;
+  background: rgba(255,255,255,0.2);
+  backdrop-filter: blur(8px);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  border: 1px solid rgba(255,255,255,0.5);
+  pointer-events: none;
+}
+
+.reel-info {
+  position: absolute;
+  bottom: 0; left: 0; right: 0;
+  padding: 24px 20px;
+  background: linear-gradient(transparent, rgba(0,0,0,0.8));
+  color: white;
+}
+
+.reel-info p {
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+/* Allied Services Grid */
+.services-section {
+  padding: 80px 0;
+  background: var(--bg-gray);
+  border-top: 1px solid var(--border-color);
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 24px;
+}
+
+.service-card {
+  background: white;
+  border-radius: var(--radius-md);
+  padding: 40px 24px;
+  text-align: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.03);
+  border: 1px solid var(--border-color);
+  transition: all 0.3s;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 100%;
+}
+
+.service-card:hover {
+  box-shadow: var(--shadow-lg);
+  transform: translateY(-4px);
+  border-color: #10B981;
+}
+
+.service-icon {
+  width: 64px;
+  height: 64px;
+  background: #ECFDF5;
+  color: #10B981;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+}
+
+.service-card h3 {
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text-dark);
+  margin-bottom: 16px;
+}
+
+.service-card p {
+  font-size: 14px;
+  color: var(--text-gray);
+  margin-bottom: 32px;
+  flex-grow: 1;
+}
+
+.btn-service {
+  background: var(--text-dark);
+  color: white;
+  width: 100%;
+  padding: 14px;
+  border-radius: var(--radius-sm);
+  font-size: 14px;
+  font-weight: 600;
+  border: none;
+  cursor: pointer;
+  transition: background 0.3s;
+}
+
+.service-card:hover .btn-service {
+  background: #10B981;
+}
+
+@media (max-width: 1024px) {
+  .decor-bento-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .bento-1 { grid-column: span 2; grid-row: span 2; }
+  .bento-2 { grid-column: span 2; grid-row: span 1; }
+  .bento-3 { grid-column: span 1; grid-row: span 1; }
+  .bento-4 { grid-column: span 1; grid-row: span 1; }
+  
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .before-after-container {
+    height: 350px;
+  }
+  .interiors-title {
+    font-size: 32px;
+  }
+  .decor-bento-grid {
+    grid-template-columns: 1fr;
+    grid-auto-rows: 200px;
+  }
+  .bento-1, .bento-2, .bento-3, .bento-4 {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+  .services-grid {
+    grid-template-columns: 1fr;
+  }
+}
